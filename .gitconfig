@@ -1,0 +1,30 @@
+[user]
+	name = Richard Brown
+	email = richarb@quantumcheese.com
+[alias]
+	co = checkout
+	unadd = reset HEAD
+	lg = log --graph --decorate --all
+	amend = commit --amend
+	aa = add --all
+	s = status
+	f = fetch
+	ap = add -p
+	file-diff = diff-tree --name-only -r
+[color]
+	branch = auto
+	diff = auto
+	gui = true
+[color "diff"]
+	whitespace = yellow reverse
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	hideDotFiles = dotGitOnly
+	autocrlf = input
+	editor = vim
+[rebase]
+	stat = true
+[rerere]
+	enabled = true
+[merge]
+	;tool = vimdiff
