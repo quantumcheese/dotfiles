@@ -5,12 +5,21 @@
 	co = checkout
 	unadd = reset HEAD
 	lg = log --graph --decorate --all
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	amend = commit --amend
-	aa = add --all
 	s = status
 	f = fetch
 	ap = add -p
+	aa = add --all
+	au = !git add $(git ls-files -o --exclude-standard)
 	file-diff = diff-tree --name-only -r
+	untracked = ls-files --other --exclude-standard
+	a = add
+	stash = stash --keep-index
+	pop = stash pop
+	ff = merge --ff-only
+	save = stash save
 [color]
 	branch = auto
 	diff = auto
@@ -20,7 +29,7 @@
 [core]
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	hideDotFiles = dotGitOnly
-	autocrlf = input
+	autocrlf = true
 	editor = vim
 [rebase]
 	stat = true
@@ -28,3 +37,5 @@
 	enabled = true
 [merge]
 	;tool = vimdiff
+[branch]
+	autosetuprebase = always
