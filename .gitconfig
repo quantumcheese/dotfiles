@@ -2,11 +2,14 @@
 	name = Richard Brown
 	email = richarb@quantumcheese.com
 [alias]
+	type = help
 	co = checkout
+	br = branch
 	unadd = reset HEAD
 	lg = log --graph --decorate --all
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	amend = commit --amend
 	s = status
 	f = fetch
@@ -18,12 +21,16 @@
 	a = add
 	stash = stash --keep-index
 	pop = stash pop
-	ff = merge --ff-only
 	save = stash save
+	get-tracking-remote = !git config branch.$(git name-rev --name-only HEAD).remote
+	get-tracking-branch = !basename $(git config branch.$(git name-rev --name-only HEAD).merge)
+	tracking-branch = !echo \"$(git get-tracking-remote)/$(git get-tracking-branch)\"
+	tracking-diff = !git diff $(git tracking-branch)
 [color]
-	branch = auto
-	diff = auto
+	branch = true
+	diff = true
 	gui = true
+	ui = true
 [color "diff"]
 	whitespace = yellow reverse
 [core]
@@ -39,3 +46,9 @@
 	;tool = vimdiff
 [branch]
 	autosetuprebase = always
+[merge]
+	ff = only
+[push]
+	default = upstream
+[grep]
+	lineNumber = true
