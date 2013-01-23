@@ -9,10 +9,10 @@
     NO_COLOR=$( tput sgr0    || tput me    )
 }
 PS1_BASE="[\[${BOLD}${BLUE}\]\T\[${NO_COLOR}\] : \[${BOLD}${YELLOW}\]\u\[${NO_COLOR}\]@\[${BOLD}${RED}\]\W\[${NO_COLOR}\]]"
-GIT_COMPLETION="~/bin/git/git-completion.bash"
-if [ -f "${GIT_COMPLETION}" ]; then
-    . "${GIT_COMPLETION}"
-    PS1_BASE="${PS1_BASE}\[${BOLD}${CYAN}\]$(__git_ps1)\[${NO_COLOR}\]"
+GIT_PROMPT="${HOME}/bin/git/git-prompt.sh"
+if [ -x "${GIT_PROMPT}" ]; then
+    . "${GIT_PROMPT}"
+    PS1_BASE="${PS1_BASE}\[${BOLD}${CYAN}\]\$(__git_ps1 )\[${NO_COLOR}\]"
 fi
 export PS1="${PS1_BASE}\$ "
 export PS2="\e[1;35m$PS2\e[0m"
