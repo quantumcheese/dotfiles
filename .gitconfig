@@ -26,6 +26,10 @@
 	get-tracking-branch = !basename $(git config branch.$(git name-rev --name-only HEAD).merge)
 	tracking-branch = !echo \"$(git get-tracking-remote)/$(git get-tracking-branch)\"
 	tracking-diff = !git diff $(git tracking-branch)
+    sf = svn fetch
+    sr = svn rebase
+	sfr = !git svn fetch && git svn rebase
+	sd = svn dcommit
 [color]
 	branch = true
 	diff = true
@@ -36,14 +40,15 @@
 [core]
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	hideDotFiles = dotGitOnly
-	autocrlf = true
+	autocrlf = input
 	editor = vim
 [rebase]
 	stat = true
 [rerere]
 	enabled = true
 [merge]
-	;tool = vimdiff
+    keepBackup = false;
+    tool = p4merge
 [branch]
 	autosetuprebase = always
 [merge]
@@ -52,3 +57,9 @@
 	default = upstream
 [grep]
 	lineNumber = true
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
