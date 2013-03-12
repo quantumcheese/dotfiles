@@ -49,10 +49,9 @@
 [merge]
     keepBackup = false;
     tool = p4merge
+	ff = only
 [branch]
 	autosetuprebase = always
-[merge]
-	ff = only
 [push]
 	default = upstream
 [grep]

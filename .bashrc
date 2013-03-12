@@ -15,7 +15,7 @@ if [ -x "${GIT_PROMPT}" ]; then
     PS1_BASE="${PS1_BASE}\[${BOLD}${CYAN}\]\$(__git_ps1 )\[${NO_COLOR}\]"
 fi
 export PS1="${PS1_BASE}\$ "
-export PS2="\e[1;35m$PS2\e[0m"
+export PS2="${MAGENTA}${PS2}${NO_COLOR}"
 
 alias screendr='screen -D -R'
 alias screenr='screen -r'
