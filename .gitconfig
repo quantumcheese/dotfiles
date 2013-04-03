@@ -13,12 +13,13 @@
 	amend = commit --amend
 	s = status
 	f = fetch
-	ap = add -p
+	a = add
 	aa = add --all
+	ae = add -e
+	ap = add -p
 	au = !git add $(git ls-files -o --exclude-standard)
 	file-diff = diff-tree --name-only -r
 	untracked = ls-files --other --exclude-standard
-	a = add
 	stash = stash --keep-index
 	pop = stash pop
 	save = stash save
