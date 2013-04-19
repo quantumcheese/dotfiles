@@ -14,7 +14,7 @@
 	s = status
 	f = fetch
 	a = add
-	aa = add --all
+	aa = add --all .
 	ae = add -e
 	ap = add -p
 	au = !git add $(git ls-files -o --exclude-standard)
@@ -43,6 +43,7 @@
 	hideDotFiles = dotGitOnly
 	autocrlf = input
 	editor = vim
+	excludesfile = $HOME/.gitignore
 [rebase]
 	stat = true
 [rerere]
@@ -51,6 +52,7 @@
     keepBackup = false;
     tool = p4merge
 	ff = only
+	defaultToUpstream = true
 [branch]
 	autosetuprebase = always
 [push]
@@ -62,4 +64,3 @@
 	keepTemporaries = false
 	trustExitCode = false
 	keepBackup = false
-
