@@ -31,6 +31,7 @@
     sr = svn rebase
 	sfr = !git svn fetch && git svn rebase
 	sd = svn dcommit
+	last-hash = rev-parse --short HEAD
 [color]
 	branch = true
 	diff = true
