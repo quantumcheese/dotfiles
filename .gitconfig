@@ -19,6 +19,7 @@
 	ap = add -p
 	au = !git add $(git ls-files -o --exclude-standard)
 	file-diff = diff-tree --name-only -r
+	git = !git # accidental extra 'git' on command line
 	untracked = ls-files --other --exclude-standard
 	stash = stash --keep-index
 	pop = stash pop
