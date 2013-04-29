@@ -1,69 +1,69 @@
 [user]
-	name = Richard Brown
-	email = rabrown@quantumcheese.com
+    name = Richard Brown
+    email = rabrown@quantumcheese.com
 [alias]
-	type = help
-	co = checkout
-	br = branch
-	unadd = reset HEAD
-	lg = log --graph --decorate --all
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	amend = commit --amend
-	s = status
-	f = fetch
-	a = add
-	aa = add --all .
-	ae = add -e
-	ap = add -p
-	au = !git add $(git ls-files -o --exclude-standard)
-	file-diff = diff-tree --name-only -r
-	git = !git # accidental extra 'git' on command line
-	untracked = ls-files --other --exclude-standard
-	stash = stash --keep-index
-	pop = stash pop
-	save = stash save
-	get-tracking-remote = !git config branch.$(git name-rev --name-only HEAD).remote
-	get-tracking-branch = !basename $(git config branch.$(git name-rev --name-only HEAD).merge)
+    type = help
+    co = checkout
+    br = branch
+    unadd = reset HEAD
+    lg = log --graph --decorate --all
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    amend = commit --amend
+    s = status
+    f = fetch
+    a = add
+    aa = add --all .
+    ae = add -e
+    ap = add -p
+    au = !git add $(git ls-files -o --exclude-standard)
+    file-diff = diff-tree --name-only -r
+    git = !git # accidental extra 'git' on command line
+    untracked = ls-files --other --exclude-standard
+    stash = stash --keep-index
+    pop = stash pop
+    save = stash save
+    get-tracking-remote = !git config branch.$(git name-rev --name-only HEAD).remote
+    get-tracking-branch = !basename $(git config branch.$(git name-rev --name-only HEAD).merge)
     restrict-subtree = !git filter-branch --subdirectory-filter "$2" --tag-name-filter cat -- --all
-	tracking-branch = !echo \"$(git get-tracking-remote)/$(git get-tracking-branch)\"
-	tracking-diff = !git diff $(git tracking-branch)
+    tracking-branch = !echo \"$(git get-tracking-remote)/$(git get-tracking-branch)\"
+    tracking-diff = !git diff $(git tracking-branch)
     sf = svn fetch
     sr = svn rebase
-	sfr = !git svn fetch && git svn rebase
-	sd = svn dcommit
-	last-hash = rev-parse --short HEAD
+    sfr = !git svn fetch && git svn rebase
+    sd = svn dcommit
+    last-hash = rev-parse --short HEAD
 [color]
-	branch = true
-	diff = true
-	gui = true
-	ui = true
+    branch = true
+    diff = true
+    gui = true
+    ui = true
 [color "diff"]
-	whitespace = yellow reverse
+    whitespace = yellow reverse
 [core]
-	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	hideDotFiles = dotGitOnly
-	autocrlf = input
-	editor = vim
-	excludesfile = $HOME/.gitignore
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    hideDotFiles = dotGitOnly
+    autocrlf = input
+    editor = vim
+    excludesfile = $HOME/.gitignore
 [rebase]
-	stat = true
+    stat = true
 [rerere]
-	enabled = true
+    enabled = true
 [merge]
     keepBackup = false;
     tool = p4merge
-	ff = only
-	defaultToUpstream = true
+    ff = only
+    defaultToUpstream = true
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [push]
-	default = upstream
+    default = upstream
 [grep]
-	lineNumber = true
+    lineNumber = true
 [mergetool "p4merge"]
-	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-	keepTemporaries = false
-	trustExitCode = false
-	keepBackup = false
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
