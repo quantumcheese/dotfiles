@@ -26,6 +26,7 @@
 	save = stash save
 	get-tracking-remote = !git config branch.$(git name-rev --name-only HEAD).remote
 	get-tracking-branch = !basename $(git config branch.$(git name-rev --name-only HEAD).merge)
+    restrict-subtree = !git filter-branch --subdirectory-filter "$2" --tag-name-filter cat -- --all
 	tracking-branch = !echo \"$(git get-tracking-remote)/$(git get-tracking-branch)\"
 	tracking-diff = !git diff $(git tracking-branch)
     sf = svn fetch
