@@ -17,8 +17,14 @@ fi
 export PS1="${PS1_BASE}\$ "
 export PS2="${MAGENTA}${PS2}${NO_COLOR}"
 
+GIT_COMPLETE="${HOME}/bin/git/git-completion.bash"
+if [ -f "${GIT_COMPLETE}" ]; then
+    . "${GIT_COMPLETE}"
+fi
+
 alias screendr='screen -D -R'
 alias screenr='screen -r'
+alias gits='git s'
 
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'

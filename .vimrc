@@ -2,8 +2,11 @@ colo torte
 syntax on
 set hlsearch
 
-set nobackup
-set nowritebackup
+"set nobackup
+"set nowritebackup
+set backupdir=~/.vim/backup/
+set directory=~/.vim/backup/
+set noswapfile
 
 set expandtab
 set tabstop=4
