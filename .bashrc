@@ -26,5 +26,7 @@ alias screendr='screen -D -R'
 alias screenr='screen -r'
 alias gits='git s'
 
+alias cdd='cd ${OLDPWD}'
+
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'

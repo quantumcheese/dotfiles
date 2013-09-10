@@ -9,7 +9,7 @@
     lg = log --graph --decorate --all
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     amend = commit --amend --no-edit
     s = status
     f = fetch
@@ -34,6 +34,7 @@
     sfr = !git svn fetch && git svn rebase
     sd = svn dcommit
     last-hash = rev-parse --short HEAD
+	ca = commit --amend
 [color]
     branch = true
     diff = true
@@ -54,7 +55,7 @@
 [merge]
     keepBackup = false;
     tool = p4merge
-    ff = only
+    #ff = only
     defaultToUpstream = true
 [branch]
     autosetuprebase = always
@@ -67,3 +68,11 @@
     keepTemporaries = false
     trustExitCode = false
     keepBackup = false
+[diff]
+	tool = p4merge
+[difftool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge $LOCAL $REMOTE
+[mergetool]
+	keepBackup = false
+[pull]
+	rebase = true
