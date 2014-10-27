@@ -34,7 +34,8 @@
     sfr = !git svn fetch && git svn rebase
     sd = svn dcommit
     last-hash = rev-parse --short HEAD
-	ca = commit --amend
+    ca = commit --amend
+    ac = !git ca
 [color]
     branch = true
     diff = true
@@ -42,6 +43,14 @@
     ui = true
 [color "diff"]
     whitespace = yellow reverse
+    meta = yellow bold
+    old = magenta bold
+    new = cyan bold
+[color "status"]
+    untracked = blue bold reverse
+    added = green bold reverse
+    changed = cyan bold
+    untracked = yellow bold
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     hideDotFiles = dotGitOnly
@@ -69,10 +78,10 @@
     trustExitCode = false
     keepBackup = false
 [diff]
-	tool = p4merge
+    tool = p4merge
 [difftool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge $LOCAL $REMOTE
+    cmd = /Applications/p4merge.app/Contents/MacOS/p4merge $LOCAL $REMOTE
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 [pull]
-	rebase = true
+    rebase = true
