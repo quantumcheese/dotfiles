@@ -8,14 +8,14 @@
     BOLD=$(     tput bold    || tput md    )
     NO_COLOR=$( tput sgr0    || tput me    )
 }
-PS1_BASE="[\[${BOLD}${BLUE}\]\T\[${NO_COLOR}\] : \[${BOLD}${YELLOW}\]\u\[${NO_COLOR}\]@\[${BOLD}${RED}\]\W\[${NO_COLOR}\]]"
+PS1_BASE="[\[${BOLD}${MAGENTA}\]\T\[${NO_COLOR}\] : \[${BOLD}${YELLOW}\]\u\[${NO_COLOR}\]@\[${BOLD}${RED}\]\W\[${NO_COLOR}\]]"
 GIT_PROMPT="${HOME}/bin/git/git-prompt.sh"
 if [ -x "${GIT_PROMPT}" ]; then
     . "${GIT_PROMPT}"
     PS1_BASE="${PS1_BASE}\[${BOLD}${CYAN}\]\$(__git_ps1 )\[${NO_COLOR}\]"
 fi
 export PS1="${PS1_BASE}\$ "
-export PS2="${MAGENTA}${PS2}${NO_COLOR}"
+export PS2="${GREEN}${PS2}${NO_COLOR}"
 
 GIT_COMPLETE="${HOME}/bin/git/git-completion.bash"
 if [ -f "${GIT_COMPLETE}" ]; then
