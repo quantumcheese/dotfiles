@@ -1,5 +1,5 @@
 [user]
-    name = Richard Brown
+    name = Richard A. Brown
     email = rabrown@quantumcheese.com
 [alias]
     type = help
@@ -56,6 +56,14 @@
     ui = true
 [color "diff"]
     whitespace = yellow reverse
+    meta = yellow bold
+    old = magenta bold
+    new = cyan bold
+[color "status"]
+    untracked = blue bold reverse
+    added = cyan bold
+    changed = green bold
+    untracked = yellow bold
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     hideDotFiles = dotGitOnly
