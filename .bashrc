@@ -17,6 +17,11 @@ fi
 export PS1="${PS1_BASE}\n\
 \[${BOLD}${BLUE}\] └─ \$\[${NO_COLOR}\] "
 export PS2="${GREEN}${PS2}${NO_COLOR}"
+export PS4="[\[${MAGENTA}\]\T\[${NO_COLOR}\]]${PS4}"
+
+export HISTCONTROL=ignoreboth
+
+export PATH="${HOME}/bin:${PATH}"
 
 GIT_COMPLETE="${HOME}/bin/git/git-completion.bash"
 if [ -f "${GIT_COMPLETE}" ]; then
