@@ -14,7 +14,8 @@ if [ -x "${GIT_PROMPT}" ]; then
     . "${GIT_PROMPT}"
     PS1_BASE="${PS1_BASE}\[${BOLD}${CYAN}\]\$(__git_ps1 )\[${NO_COLOR}\]"
 fi
-export PS1="${PS1_BASE}\$ "
+export PS1="${PS1_BASE}\n\
+\[${BOLD}${BLUE}\] └─ \$\[${NO_COLOR}\] "
 export PS2="${GREEN}${PS2}${NO_COLOR}"
 
 GIT_COMPLETE="${HOME}/bin/git/git-completion.bash"
